@@ -20,3 +20,8 @@
 /Users/BOKSIC/MovieApi/Droid/bin/Debug/Xamarin.Forms.Xaml.dll
 /Users/BOKSIC/MovieApi/Droid/bin/Debug/MovieApi.dll
 /Users/BOKSIC/MovieApi/Droid/bin/Debug/MovieApi.dll.mdb
+/Users/BOKSIC/MovieApi/Droid/bin/Debug/Xamarin.Android.Support.v7.AppCompat.dll
+/Users/BOKSIC/MovieApi/Droid/bin/Debug/Xamarin.Android.Support.Design.dll
+/Users/BOKSIC/MovieApi/Droid/bin/Debug/Xamarin.Android.Support.v7.CardView.dll
+/Users/BOKSIC/MovieApi/Droid/bin/Debug/Xamarin.Android.Support.v7.MediaRouter.dll
+/Users/BOKSIC/MovieApi/Droid/bin/Debug/Xamarin.Forms.Platform.dll

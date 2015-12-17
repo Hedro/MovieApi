@@ -5,3 +5,4 @@
 /Users/BOKSIC/MovieApi/MovieApi/obj/Debug/MovieApi.dll.mdb
 /Users/BOKSIC/MovieApi/MovieApi/bin/Debug/Xamarin.Forms.Core.dll
 /Users/BOKSIC/MovieApi/MovieApi/bin/Debug/Xamarin.Forms.Xaml.dll
+/Users/BOKSIC/MovieApi/MovieApi/bin/Debug/Xamarin.Forms.Platform.dll

@@ -4,10 +4,15 @@
 /Users/BOKSIC/MovieApi/Droid/obj/Debug/assemblies/Mono.Android.dll
 /Users/BOKSIC/MovieApi/Droid/obj/Debug/assemblies/Xamarin.Insights.dll
 /Users/BOKSIC/MovieApi/Droid/obj/Debug/assemblies/Xamarin.Android.Support.v4.dll
+/Users/BOKSIC/MovieApi/Droid/obj/Debug/assemblies/Xamarin.Android.Support.v7.AppCompat.dll
+/Users/BOKSIC/MovieApi/Droid/obj/Debug/assemblies/Xamarin.Android.Support.Design.dll
+/Users/BOKSIC/MovieApi/Droid/obj/Debug/assemblies/Xamarin.Android.Support.v7.CardView.dll
+/Users/BOKSIC/MovieApi/Droid/obj/Debug/assemblies/Xamarin.Android.Support.v7.MediaRouter.dll
 /Users/BOKSIC/MovieApi/Droid/obj/Debug/assemblies/Xamarin.Forms.Platform.Android.dll
 /Users/BOKSIC/MovieApi/Droid/obj/Debug/assemblies/FormsViewGroup.dll
 /Users/BOKSIC/MovieApi/Droid/obj/Debug/assemblies/Xamarin.Forms.Core.dll
 /Users/BOKSIC/MovieApi/Droid/obj/Debug/assemblies/Xamarin.Forms.Xaml.dll
+/Users/BOKSIC/MovieApi/Droid/obj/Debug/assemblies/Xamarin.Forms.Platform.dll
 /Users/BOKSIC/MovieApi/Droid/obj/Debug/assemblies/System.Core.dll
 /Users/BOKSIC/MovieApi/Droid/obj/Debug/assemblies/MovieApi.dll
 /Users/BOKSIC/MovieApi/Droid/obj/Debug/assemblies/mscorlib.dll
