@@ -47,6 +47,5 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="aaa.png" />
   </ItemGroup>
 </Project>
