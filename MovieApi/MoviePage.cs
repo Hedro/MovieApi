@@ -24,38 +24,64 @@ namespace MovieApi
 			Content = listView;
 
 			getMovies ();
+
+			//Evenement OnClick
+			listView.ItemSelected += async (sender, e) => {
+				System.Diagnostics.Debug.WriteLine("Clicked !!!");
+			};
 		}
 
 		public class CustomMovieCell : ViewCell
 		{
 			public CustomMovieCell()
 			{
-				AbsoluteLayout cellView = new AbsoluteLayout (){};
+				StackLayout cellView = new StackLayout (){};
 
-				var nameLabel = new Label ();
-				nameLabel.SetBinding (Label.TextProperty, new Binding ("Name"));
-				AbsoluteLayout.SetLayoutBounds (nameLabel,new Rectangle(.25, .25, 400, 40));
-				nameLabel.FontSize = 24;
-				cellView.Children.Add (nameLabel);
+				cellView.Orientation = StackOrientation.Horizontal;
+				StackLayout cellWrapper = new StackLayout ();
 
-				var typeLabel = new Label ();
-				typeLabel.SetBinding (Label.TextProperty, new Binding ("Type"));
-				AbsoluteLayout.SetLayoutBounds (typeLabel,new Rectangle(50, 35, 200, 25));
-				cellView.Children.Add (typeLabel);
-
+				//Set Labels et Image
 				var image = new Image ();
-				image.SetBinding (Image.SourceProperty, new Binding ("Image"));
-				AbsoluteLayout.SetLayoutBounds (image,new Rectangle(250, .25, 200, 25));
+				var nameLabel = new Label ();
+				var yearLabel = new Label ();
+
+				//Set bindings
+				nameLabel.SetBinding (Label.TextProperty, "Name");
+				yearLabel.SetBinding (Label.TextProperty, "Year");
+				image.SetBinding (Image.SourceProperty, "Image");
+
+				//Add to cells
 				cellView.Children.Add (image);
-				this.View = cellView;
+				cellView.Children.Add (nameLabel);
+				cellView.Children.Add (yearLabel);
+				cellWrapper.Children.Add (cellView);
+				View = cellWrapper;
+
+
+
+//				var image = new Image ();
+//				image.SetBinding (Image.SourceProperty, new Binding ("Image"));
+//
+//				var nameLabel = new Label ();
+//				nameLabel.SetBinding (Label.TextProperty, new Binding ("Name"));
+//				nameLabel.FontSize = 24;
+//
+//				var yearLabel = new Label ();
+//				yearLabel.SetBinding (Label.TextProperty, new Binding ("Year"));
+//				nameLabel.FontSize = 24;
+//			
+//				cellView.Children.Add (image);
+//				this.View = cellView;
+//				cellView.Children.Add(nameLabel);
+//				cellView.Children.Add(yearLabel);
 			}
 		}
 
 		public void getMovies()
 		{
-			movies.Add (new MovieViewModel{ Name="Batman", Type="Action", Image="aaa.png"});
-			movies.Add (new MovieViewModel{ Name="Inglorious Bastard", Type="Action", Image=""});
-			movies.Add (new MovieViewModel{ Name="Shutter Island", Type="Thriller", Image=""});
+			movies.Add (new MovieViewModel{ Name="Batman", Year="2000", Image="aaa.png"});
+			movies.Add (new MovieViewModel{ Name="Inglorious Bastard", Year="2001", Image=""});
+			movies.Add (new MovieViewModel{ Name="Shutter Island", Year="2008", Image=""});
 		}
 	}
 }
