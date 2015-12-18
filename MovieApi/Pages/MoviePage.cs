@@ -30,15 +30,16 @@ namespace MovieApi
 
 			//Evenement OnClick
 			listView.ItemSelected += async (sender, e) => {
-				if (e.SelectedItem == null)
+				
+				if (e.SelectedItem != null)
 				{
-					return;
-				}
-				//Deselect row
-				listView.SelectedItem= null;
+					//Deselect row
+					listView.SelectedItem= null;
 
-				//Ouvre la page de detail
-				await Navigation.PushModalAsync (new DetailMoviePage());
+					//Ouvre la page de detail
+					await Navigation.PushModalAsync (new DetailMoviePage());
+				}
+				return;
 			};
 		}
 
