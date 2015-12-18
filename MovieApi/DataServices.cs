@@ -15,6 +15,7 @@ namespace MovieApi
 	{
 		public static string getDataFromService(string queryString)
 		{
+			
 			HttpRequestMessage request = new HttpRequestMessage (HttpMethod.Get, queryString);
 
 			request.Headers.Add ("trakt-api-version", "2");
