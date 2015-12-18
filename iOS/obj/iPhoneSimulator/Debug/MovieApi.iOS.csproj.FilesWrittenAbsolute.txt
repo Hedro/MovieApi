@@ -26,3 +26,5 @@
 /Users/BOKSIC/MovieApi/iOS/bin/iPhoneSimulator/Debug/Xamarin.Forms.Xaml.dll
 /Users/BOKSIC/MovieApi/iOS/bin/iPhoneSimulator/Debug/MovieApi.dll
 /Users/BOKSIC/MovieApi/iOS/bin/iPhoneSimulator/Debug/MovieApi.dll.mdb
+/Users/BOKSIC/MovieApi/iOS/bin/iPhoneSimulator/Debug/Xamarin.Forms.Platform.dll
+/Users/BOKSIC/MovieApi/iOS/bin/iPhoneSimulator/Debug/Newtonsoft.Json.dll

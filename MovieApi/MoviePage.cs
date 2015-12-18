@@ -25,6 +25,9 @@ namespace MovieApi
 
 			getMovies ();
 
+			//Recupere le top 10 des films dans l'Api
+			Core.GetMovie ();
+
 			//Evenement OnClick
 			listView.ItemSelected += async (sender, e) => {
 				if (e.SelectedItem == null)
@@ -34,6 +37,7 @@ namespace MovieApi
 				//Deselect row
 				listView.SelectedItem= null;
 
+				//Ouvre la page de detail
 				await Navigation.PushModalAsync (new DetailMoviePage());
 			};
 		}
@@ -65,7 +69,7 @@ namespace MovieApi
 				View = cellWrapper;
 			}
 		}
-
+			
 		public void getMovies()
 		{
 			movies.Add (new MovieViewModel{ Name="Batman", Year="2000", Image=""});

@@ -25,3 +25,4 @@
 /Users/BOKSIC/MovieApi/Droid/bin/Debug/Xamarin.Android.Support.v7.CardView.dll
 /Users/BOKSIC/MovieApi/Droid/bin/Debug/Xamarin.Android.Support.v7.MediaRouter.dll
 /Users/BOKSIC/MovieApi/Droid/bin/Debug/Xamarin.Forms.Platform.dll
+/Users/BOKSIC/MovieApi/Droid/bin/Debug/Newtonsoft.Json.dll
