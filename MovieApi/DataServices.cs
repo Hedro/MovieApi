@@ -13,7 +13,7 @@ namespace MovieApi
 {
 	public class DataServices
 	{
-		public static Task<dynamic> getDataFromService(string queryString)
+		public static string getDataFromService(string queryString)
 		{
 			HttpRequestMessage request = new HttpRequestMessage (HttpMethod.Get, queryString);
 
@@ -26,8 +26,7 @@ namespace MovieApi
 
 			string responseText = httpResponse.Content.ReadAsStringAsync ().Result;
 
-			dynamic data = JsonConvert.DeserializeObject (responseText);
-			return data;
+			return responseText;
 		}
 	}
 }

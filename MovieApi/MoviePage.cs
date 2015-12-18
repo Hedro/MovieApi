@@ -23,10 +23,10 @@ namespace MovieApi
 
 			Content = listView;
 
-			getMovies ();
-
 			//Recupere le top 10 des films dans l'Api
-			Core.GetMovie ();
+			MovieViewModel[] movieViewModel = Core.GetMovie ();
+
+			getMovies (movieViewModel);
 
 			//Evenement OnClick
 			listView.ItemSelected += async (sender, e) => {
@@ -70,11 +70,19 @@ namespace MovieApi
 			}
 		}
 			
-		public void getMovies()
+		public void getMovies(MovieViewModel[] movie)
 		{
-			movies.Add (new MovieViewModel{ Name="Batman", Year="2000", Image=""});
-			movies.Add (new MovieViewModel{ Name="Inglorious Bastard", Year="2001", Image=""});
-			movies.Add (new MovieViewModel{ Name="Shutter Island", Year="2008", Image=""});
+			if(movie != null)
+			{
+				for (int i = 0; i < 10; i++) 
+				{
+					movies.Add (new MovieViewModel{ Identifiant = movie[i].Identifiant, Name = movie[i].Name, Year = movie[i].Year, Image = "" });
+				}
+			}
+			else
+			{
+				
+			}
 		}
 	}
 }
