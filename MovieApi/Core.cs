@@ -17,14 +17,19 @@ namespace MovieApi
 			{
 				dynamic data = JsonConvert.DeserializeObject(results);
 
-				MovieViewModel[] movieViewModel = new MovieViewModel [10];
+				MovieViewModel[] movieViewModel = new MovieViewModel[10];
 
 				for (int i = 0; i < 10; i++) 
 				{
+					movieViewModel[i] = new MovieViewModel ();
+
 					movieViewModel[i].Identifiant = (string)data[i]["movie"]["ids"]["slug"].Value;
 					movieViewModel[i].Name = (string)data[i]["movie"]["title"].Value;
 					movieViewModel[i].Year = (long)data[i]["movie"]["year"].Value;
+					movieViewModel[i].URLImage = (string)data[i]["movie"]["images"]["poster"]["thumb"].Value;
 				}
+
+				return movieViewModel;
 			} 
 			else 
 			{

@@ -57,9 +57,11 @@ namespace MovieApi
 				var yearLabel = new Label ();
 
 				//Set bindings
+				image.SetBinding (Image.SourceProperty, "Image");
 				nameLabel.SetBinding (Label.TextProperty, "Name");
 				yearLabel.SetBinding (Label.TextProperty, "Year");
-				image.SetBinding (Image.SourceProperty, "Image");
+
+				image.WidthRequest = 72.0;
 
 				//Add to cells
 				cellView.Children.Add (image);
@@ -76,7 +78,7 @@ namespace MovieApi
 			{
 				for (int i = 0; i < 10; i++) 
 				{
-					movies.Add (new MovieViewModel{ Identifiant = movie[i].Identifiant, Name = movie[i].Name, Year = movie[i].Year, Image = "" });
+					movies.Add (new MovieViewModel{ Identifiant = movie[i].Identifiant, Name = movie[i].Name, Year = movie[i].Year, Image = ImageSource.FromUri(new Uri(movie[i].URLImage)) });
 				}
 			}
 			else
