@@ -9,24 +9,43 @@ namespace MovieApi
 	{
 		public ObservableCollection<MovieViewModel> movies { get; set; }
 
-		public MoviePage ()
+		string queryString;
+
+		public MoviePage (string type)
 		{
 			NavigationPage.SetHasBackButton (this, true);
 
 			movies = new ObservableCollection<MovieViewModel> ();
 			ListView listView = new ListView ();
-
+			;
 			listView.RowHeight = 100;
-
-			this.Title = "Top 10 Movies";
 
 			listView.ItemsSource = movies;
 			listView.ItemTemplate = new DataTemplate (typeof(CustomMovieCell));
 
 			Content = listView;
 
+			switch (type) 
+			{
+				case "Popular" : this.Title = "Most popular movies !";
+				queryString = "https://api-v2launch.trakt.tv/movies/watched/all?extended=images";
+					break;
+				case "Anticipated" : this.Title = "Anticipated movies !";
+				queryString = "https://api-v2launch.trakt.tv/movies/anticipated?extended=images";
+					break;
+				case "Trending" : this.Title = "Trending movies !";
+				queryString = "https://api-v2launch.trakt.tv/movies/trending?extended=images";
+					break;
+				case "BoxOffice" : this.Title = "Box Office !";
+				queryString = "https://api-v2launch.trakt.tv/movies/boxoffice?extended=images";
+					break;
+				case "Watched" : this.Title = "Most Watched movies (this week) !";
+				queryString = "https://api-v2launch.trakt.tv/movies/watched/weekly?extended=images";
+					break;
+			}
+
 			//Recupere le top 10 des films dans l'Api
-			MovieViewModel[] movieViewModel = Core.GetMovie ();
+			MovieViewModel[] movieViewModel = Core.GetMovie (queryString);
 
 			getMovies (movieViewModel);
 

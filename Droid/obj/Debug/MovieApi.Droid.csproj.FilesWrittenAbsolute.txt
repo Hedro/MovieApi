@@ -26,3 +26,6 @@
 /Users/BOKSIC/MovieApi/Droid/bin/Debug/MovieApi.dll
 /Users/BOKSIC/MovieApi/Droid/bin/Debug/MovieApi.dll.mdb
 /Users/BOKSIC/MovieApi/Droid/bin/Debug/Newtonsoft.Json.dll
+/Users/BOKSIC/MovieApi/Droid/obj/Debug/res/drawable/popular.png
+/Users/BOKSIC/MovieApi/Droid/obj/Debug/res/drawable/boxoffice.png
+/Users/BOKSIC/MovieApi/Droid/obj/Debug/res/drawable/trending.png

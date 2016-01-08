@@ -10,22 +10,40 @@ namespace SerieApi
 	{
 		public ObservableCollection<SerieViewModel> series { get; set; }
 
-		public SeriePage ()
+		string queryString;
+
+		public SeriePage (string type)
 		{
 			series = new ObservableCollection<SerieViewModel> ();
 			ListView listView = new ListView ();
 
 			listView.RowHeight = 100;
 
-			this.Title = "Top 10 Series";
+			this.Title = "Series";
 
 			listView.ItemsSource = series;
 			listView.ItemTemplate = new DataTemplate (typeof(CustomSerieCell));
 
 			Content = listView;
 
+			switch (type) 
+			{
+				case "Popular" : this.Title = "Most popular series !";
+					queryString = "https://api-v2launch.trakt.tv/shows/watched/all?extended=images";
+					break;
+				case "Anticipated" : this.Title = "Anticipated series !";
+					queryString = "https://api-v2launch.trakt.tv/shows/anticipated?extended=images";
+					break;
+				case "Trending" : this.Title = "Trending series !";
+					queryString = "https://api-v2launch.trakt.tv/shows/trending?extended=images";
+					break;
+				case "Watched" : this.Title = "Most Watched series (this week) !";
+					queryString = "https://api-v2launch.trakt.tv/shows/watched/weekly?extended=images";
+					break;
+			}
+
 			//Recupere le top 10 des films dans l'Api
-			SerieViewModel[] serieViewModel = Core.GetSerie ();
+			SerieViewModel[] serieViewModel = Core.GetSerie (queryString);
 
 			getSeries (serieViewModel);
 

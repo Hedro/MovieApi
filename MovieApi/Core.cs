@@ -8,9 +8,8 @@ namespace MovieApi
 {
 	public class Core
 	{
-		public static MovieViewModel[] GetMovie()
+		public static MovieViewModel[] GetMovie(string queryString)
 		{
-			string queryString = "https://api-v2launch.trakt.tv/movies/trending?extended=images";
 			string results = DataServices.getMovieDataFromService(queryString);
 
 			if (results != null) 
@@ -37,9 +36,8 @@ namespace MovieApi
 			}
 		}
 
-		public static SerieViewModel[] GetSerie()
+		public static SerieViewModel[] GetSerie(string queryString)
 		{
-			string queryString = "https://api-v2launch.trakt.tv/shows/trending?extended=images";
 			string results = DataServices.getSerieDataFromService(queryString);
 
 			if (results != null) 
