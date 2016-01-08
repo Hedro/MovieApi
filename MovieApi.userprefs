@@ -1,13 +1,11 @@
 ﻿<Properties StartupItem="iOS/MovieApi.iOS.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone6s.9.2" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MovieApi/MoviePage.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MovieApi/Pages/MoviePage.cs">
     <Files>
-      <File FileName="MovieApi/MoviePage.cs" Line="62" Column="48" />
-      <File FileName="MovieApi/MovieViewModel.cs" Line="12" Column="36" />
       <File FileName="MovieApi/MovieApi.cs" Line="13" Column="1" />
-      <File FileName="MovieApi/DetailMoviePage.cs" Line="1" Column="1" />
-      <File FileName="MovieApi/Core.cs" Line="29" Column="29" />
-      <File FileName="MovieApi/DataServices.cs" Line="28" Column="4" />
+      <File FileName="MovieApi/Core.cs" Line="18" Column="1" />
+      <File FileName="MovieApi/DataServices.cs" Line="18" Column="4" />
+      <File FileName="MovieApi/Pages/MoviePage.cs" Line="37" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

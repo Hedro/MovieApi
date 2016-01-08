@@ -4,7 +4,7 @@ using Xamarin.Forms;
 
 namespace MovieApi
 {
-	public class MovieViewModel : ContentPage
+	public class SerieViewModel : ContentPage
 	{
 		public string Identifiant { get; set; }
 		public string Name { get; set; }
@@ -12,9 +12,8 @@ namespace MovieApi
 		public string URLImage { get; set; }
 		public ImageSource Image { get; set; }
 
-		public MovieViewModel ()
+		public SerieViewModel ()
 		{
-			
 		}
 	}
 }

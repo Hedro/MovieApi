@@ -2,52 +2,51 @@
 
 using Xamarin.Forms;
 using System.Collections.ObjectModel;
+using MovieApi;
 
-namespace MovieApi
+namespace SerieApi
 {
-	public class MoviePage : ContentPage
+	public class SeriePage : ContentPage
 	{
-		public ObservableCollection<MovieViewModel> movies { get; set; }
+		public ObservableCollection<SerieViewModel> series { get; set; }
 
-		public MoviePage ()
+		public SeriePage ()
 		{
-			NavigationPage.SetHasBackButton (this, true);
-
-			movies = new ObservableCollection<MovieViewModel> ();
+			series = new ObservableCollection<SerieViewModel> ();
 			ListView listView = new ListView ();
 
 			listView.RowHeight = 100;
 
-			this.Title = "Top 10 Movies";
+			this.Title = "Top 10 Series";
 
-			listView.ItemsSource = movies;
-			listView.ItemTemplate = new DataTemplate (typeof(CustomMovieCell));
+			listView.ItemsSource = series;
+			listView.ItemTemplate = new DataTemplate (typeof(CustomSerieCell));
 
 			Content = listView;
 
 			//Recupere le top 10 des films dans l'Api
-			MovieViewModel[] movieViewModel = Core.GetMovie ();
+			SerieViewModel[] serieViewModel = Core.GetSerie ();
 
-			getMovies (movieViewModel);
+			getSeries (serieViewModel);
 
 			//Evenement OnClick
 			listView.ItemSelected += async (sender, e) => {
-				
+
 				if (e.SelectedItem != null)
 				{
 					//Deselect row
 					listView.SelectedItem= null;
 
 					//Ouvre la page de detail
-					await Navigation.PushModalAsync (new DetailMoviePage());
+					await Navigation.PushModalAsync (new DetailSeriePage());
 				}
 				return;
 			};
 		}
 
-		public class CustomMovieCell : ViewCell
+		public class CustomSerieCell : ViewCell
 		{
-			public CustomMovieCell()
+			public CustomSerieCell()
 			{
 				StackLayout cellView = new StackLayout (){};
 
@@ -73,16 +72,18 @@ namespace MovieApi
 				this.View = cellView;
 			}
 		}
-			
-		public void getMovies(MovieViewModel[] movie)
+
+		public void getSeries(SerieViewModel[] serie)
 		{
-			if(movie != null)
+			if(serie != null)
 			{
 				for (int i = 0; i < 10; i++) 
 				{
-					movies.Add (new MovieViewModel{ Identifiant = movie[i].Identifiant, Name = movie[i].Name + "\n\n(" + movie[i].Year.ToString() + ")", Image = ImageSource.FromUri(new Uri(movie[i].URLImage)) });
+					series.Add (new SerieViewModel{ Identifiant = serie[i].Identifiant, Name = serie[i].Name + "\n\n(" + serie[i].Year.ToString() + ")", Image = ImageSource.FromUri(new Uri(serie[i].URLImage)) });
 				}
 			}
 		}
 	}
 }
+
+

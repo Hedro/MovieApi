@@ -1,6 +1,7 @@
 ﻿using System;
 
 using Xamarin.Forms;
+using SerieApi;
 
 namespace MovieApi
 {
@@ -8,8 +9,7 @@ namespace MovieApi
 	{
 		public App ()
 		{
-			MainPage = new NavigationPage();
-			MainPage.Navigation.PushAsync (new MoviePage());
+			MainPage = new NavigationPage(new MovieApi.MainPage());
 		}
 
 		protected override void OnStart ()

@@ -11,7 +11,7 @@ namespace MovieApi
 		public static MovieViewModel[] GetMovie()
 		{
 			string queryString = "https://api-v2launch.trakt.tv/movies/trending?extended=images";
-			string results = DataServices.getDataFromService(queryString);
+			string results = DataServices.getMovieDataFromService(queryString);
 
 			if (results != null) 
 			{
@@ -30,6 +30,35 @@ namespace MovieApi
 				}
 
 				return movieViewModel;
+			} 
+			else 
+			{
+				return null;
+			}
+		}
+
+		public static SerieViewModel[] GetSerie()
+		{
+			string queryString = "https://api-v2launch.trakt.tv/shows/trending?extended=images";
+			string results = DataServices.getSerieDataFromService(queryString);
+
+			if (results != null) 
+			{
+				dynamic data = JsonConvert.DeserializeObject(results);
+
+				SerieViewModel[] serieViewModel = new SerieViewModel[10];
+
+				for (int i = 0; i < 10; i++) 
+				{
+					serieViewModel[i] = new SerieViewModel ();
+
+					serieViewModel[i].Identifiant = (string)data[i]["show"]["ids"]["slug"].Value;
+					serieViewModel[i].Name = (string)data[i]["show"]["title"].Value;
+					serieViewModel[i].Year = (long)data[i]["show"]["year"].Value;
+					serieViewModel[i].URLImage = (string)data[i]["show"]["images"]["poster"]["thumb"].Value;
+				}
+
+				return serieViewModel;
 			} 
 			else 
 			{
