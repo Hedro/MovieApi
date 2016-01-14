@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using System.Net.Http;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.Collections.Generic;
 
 namespace MovieApi
 {
@@ -10,7 +11,7 @@ namespace MovieApi
 	{
 		public static MovieViewModel[] GetMovie(string queryString)
 		{
-			string results = DataServices.getMovieDataFromService(queryString);
+			string results = DataServices.getDataFromService(queryString);
 
 			if (results != null) 
 			{
@@ -38,7 +39,7 @@ namespace MovieApi
 
 		public static SerieViewModel[] GetSerie(string queryString)
 		{
-			string results = DataServices.getSerieDataFromService(queryString);
+			string results = DataServices.getDataFromService(queryString);
 
 			if (results != null) 
 			{
@@ -57,6 +58,55 @@ namespace MovieApi
 				}
 
 				return serieViewModel;
+			} 
+			else 
+			{
+				return null;
+			}
+		}
+
+		public static ItemViewModel[] GetItem(string queryString)
+		{
+			string results = DataServices.getDataFromService(queryString);
+
+			int j;
+
+			if (results != null && results != "[]") 
+			{
+				var data1 = JsonConvert.DeserializeObject<List<ItemViewModel>>(results);
+
+				dynamic data = JsonConvert.DeserializeObject(results);
+
+				ItemViewModel[] itemViewModel = new ItemViewModel[10];
+
+				if (data1.Count < 10) 
+				{
+					j = data1.Count;
+				} 
+				else 
+				{
+					j = 10;
+				}
+
+				for (int i = 0; i<j ; i++)
+				{
+					itemViewModel[i] = new ItemViewModel ();
+
+					itemViewModel[i].Type = (string)data[i]["type"].Value;
+					itemViewModel[i].Identifiant = (string)data[i][itemViewModel[i].Type]["ids"]["slug"].Value;
+					itemViewModel[i].Name = (string)data[i][itemViewModel[i].Type]["title"].Value;
+					if (data [i] [itemViewModel [i].Type] ["year"].Value == null)
+					{
+						itemViewModel [i].Year = "n/a";
+					} 
+					else
+					{
+						itemViewModel [i].Year = data [i] [itemViewModel [i].Type] ["year"].Value.ToString ();
+					}
+					itemViewModel[i].URLImage = (string)data[i][itemViewModel[i].Type]["images"]["poster"]["thumb"].Value;
+				}
+
+				return itemViewModel;
 			} 
 			else 
 			{

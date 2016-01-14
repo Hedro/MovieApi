@@ -17,7 +17,7 @@ namespace MovieApi
 
 			movies = new ObservableCollection<MovieViewModel> ();
 			ListView listView = new ListView ();
-			;
+
 			listView.RowHeight = 100;
 
 			listView.ItemsSource = movies;

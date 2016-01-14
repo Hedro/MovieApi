@@ -46,7 +46,7 @@ namespace MovieApi
 
 			buttonSearch.Clicked += async (sender, e) => 
 			{
-				//await Navigation.PushAsync ();
+				await Navigation.PushAsync (new SearchPage());
 			};
 		}
 	}
