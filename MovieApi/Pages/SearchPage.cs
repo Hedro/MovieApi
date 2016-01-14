@@ -104,7 +104,7 @@ namespace MovieApi
 
 					items.Add (new ItemViewModel {
 						Identifiant = item [i].Identifiant,
-						Name = item [i].Name + "\n\n(" + item [i].Year.ToString () + ")",
+						Name = item [i].Name + "\n\n(" + item [i].Year.ToString () + ")\n" + item[i].Type,
 						Image = ImageSource.FromUri (new Uri (item [i].URLImage))
 					});
 				}
