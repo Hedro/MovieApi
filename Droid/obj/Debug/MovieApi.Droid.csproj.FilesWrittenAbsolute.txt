@@ -7,9 +7,6 @@
 /Users/BOKSIC/MovieApi/Droid/obj/Debug/res/drawable-hdpi/icon.png
 /Users/BOKSIC/MovieApi/Droid/obj/Debug/res/drawable-xhdpi/icon.png
 /Users/BOKSIC/MovieApi/Droid/obj/Debug/res/drawable-xxhdpi/icon.png
-/Users/BOKSIC/MovieApi/Droid/obj/Debug/res/drawable/boxoffice.png
-/Users/BOKSIC/MovieApi/Droid/obj/Debug/res/drawable/popular.png
-/Users/BOKSIC/MovieApi/Droid/obj/Debug/res/drawable/trending.png
 /Users/BOKSIC/MovieApi/Droid/obj/Debug/R.cs.flag
 /Users/BOKSIC/MovieApi/Droid/bin/Debug/com.companyname.movieapi-Signed.apk
 /Users/BOKSIC/MovieApi/Droid/obj/Debug/uploadflags.txt

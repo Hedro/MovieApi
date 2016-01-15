@@ -55,8 +55,10 @@ namespace SerieApi
 					//Deselect row
 					listView.SelectedItem= null;
 
+					SerieViewModel a = (SerieViewModel)e.SelectedItem;
+
 					//Ouvre la page de detail
-					await Navigation.PushModalAsync (new DetailSeriePage());
+					await Navigation.PushAsync (new DetailsMSeriePage(a.Identifiant));
 				}
 				return;
 			};

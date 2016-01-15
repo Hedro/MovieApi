@@ -13,8 +13,6 @@ namespace MovieApi
 
 		public MoviePage (string type)
 		{
-			NavigationPage.SetHasBackButton (this, true);
-
 			movies = new ObservableCollection<MovieViewModel> ();
 			ListView listView = new ListView ();
 
@@ -55,10 +53,12 @@ namespace MovieApi
 				if (e.SelectedItem != null)
 				{
 					//Deselect row
-					listView.SelectedItem= null;
+					listView.SelectedItem = null;
+
+					MovieViewModel a = (MovieViewModel) e.SelectedItem;
 
 					//Ouvre la page de detail
-					await Navigation.PushModalAsync (new DetailMoviePage());
+					await Navigation.PushAsync (new DetailsMoviePage(a.Identifiant));
 				}
 				return;
 			};

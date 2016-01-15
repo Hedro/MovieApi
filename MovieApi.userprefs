@@ -1,20 +1,15 @@
-﻿<Properties StartupItem="iOS/MovieApi.iOS.csproj">
+﻿<Properties StartupItem="iOS/MovieApi.iOS.csproj" RefactoringSettings.EnableRefactorings="True">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone6s.9.2" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MovieApi/Core.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MovieApi/Pages/MoviePage.cs">
     <Files>
-      <File FileName="MovieApi/MovieApi.cs" Line="12" Column="64" />
-      <File FileName="MovieApi/Pages/MovieTypePage.cs" Line="48" Column="61" />
-      <File FileName="MovieApi/Pages/SerieTypePage.cs" Line="9" Column="23" />
-      <File FileName="MovieApi/Pages/MoviePage.cs" Line="42" Column="1" />
-      <File FileName="MovieApi/Pages/MainPage.cs" Line="38" Column="7" />
-      <File FileName="MovieApi/Core.cs" Line="26" Column="1" />
-      <File FileName="iOS/Main.cs" Line="17" Column="1" />
+      <File FileName="MovieApi/Core.cs" Line="136" Column="6" />
+      <File FileName="MovieApi/Pages/DetailMoviePage.cs" Line="92" Column="23" />
+      <File FileName="MovieApi/Pages/MoviePage.cs" Line="60" Column="61" />
+      <File FileName="MovieApi/Models/DetailsViewModel.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/BOKSIC/MovieApi/MovieApi/Pages/MoviePage.cs" line="31" column="78" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

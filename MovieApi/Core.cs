@@ -4,6 +4,7 @@ using System.Net.Http;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
+using MovieApi.Model;
 
 namespace MovieApi
 {
@@ -112,6 +113,54 @@ namespace MovieApi
 			{
 				return null;
 			}
+		}
+
+		public static DetailsMovieViewModel GetMovieDetails(string queryString)
+		{
+			string results = DataServices.getDataFromService(queryString);
+
+			DetailsMovieViewModel movieDetailViewModel = new DetailsMovieViewModel();
+
+			dynamic data = JsonConvert.DeserializeObject(results);
+
+			movieDetailViewModel.Imdb = (string)data["ids"]["imdb"].Value;;
+			movieDetailViewModel.OverView = (string)data["overview"].Value;
+			movieDetailViewModel.Title = (string)data["title"].Value;
+			movieDetailViewModel.UrlImage = (string)data["images"]["poster"]["thumb"].Value;
+			movieDetailViewModel.Released = (string)data["released"].Value;
+			movieDetailViewModel.Year = (long)data["year"].Value;
+			movieDetailViewModel.Certification = (string)data["certification"].Value;
+			movieDetailViewModel.Vote = (long)data["votes"].Value;
+			movieDetailViewModel.Tagline = (string)data["tagline"].Value;
+			movieDetailViewModel.UrlTrailer = (string)data["trailer"].Value;
+			movieDetailViewModel.Rating = (long)data["rating"].Value;
+			movieDetailViewModel.Language = (string)data["language"].Value;
+
+			return movieDetailViewModel;
+		}
+
+		public static DetailsSerieViewModel GetSerieDetails(string queryString)
+		{
+			string results = DataServices.getDataFromService(queryString);
+
+			DetailsSerieViewModel serieDetailViewModel = new DetailsSerieViewModel();
+
+			dynamic data = JsonConvert.DeserializeObject(results);
+
+			serieDetailViewModel.OverView = (string)data["overview"].Value;
+			serieDetailViewModel.Title = (string)data["title"].Value;
+			serieDetailViewModel.UrlImage = (string)data["images"]["poster"]["thumb"].Value;
+			serieDetailViewModel.Imdb = (string)data["ids"]["imdb"].Value;
+			serieDetailViewModel.Runtime = (long)data["runtime"].Value;
+			serieDetailViewModel.AvailableTranslation = (string)data["available_translations"].ToString();
+			serieDetailViewModel.Year = (long)data["year"].Value;
+			serieDetailViewModel.Certification = (string)data["certification"].Value;
+			serieDetailViewModel.Vote = (long)data["votes"].Value;
+			serieDetailViewModel.UrlTrailer = (string)data["trailer"].Value;
+			serieDetailViewModel.Rating = (long)data["rating"].Value;
+			serieDetailViewModel.Language = (string)data["language"].Value;
+
+			return serieDetailViewModel;
 		}
 	}
 }
