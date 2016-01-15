@@ -8,13 +8,11 @@ using Xamarin.Forms;
 
 namespace MovieApi
 {
-	public class DetailsMSeriePage : ContentPage
+	public class DetailSeriePage : ContentPage
 	{
-		int count = 1;
-
 		public DetailsSerieViewModel detailsSerie { get; set; }
 
-		public DetailsMSeriePage(string id)
+		public DetailSeriePage(string id)
 		{
 			string queryString = "https://api-v2launch.trakt.tv/shows/" + id + "?extended=full,images";
 
@@ -24,10 +22,6 @@ namespace MovieApi
 
 			var webImage = new Image { Aspect = Aspect.AspectFit };
 			webImage.Source = ImageSource.FromUri(new Uri(detailsSerie.UrlImage));
-			var imdbimage = new Image();
-
-			string availableTranslation = "";
-			string gender = "";
 
 			TextCell redirectImdb = new TextCell
 			{
@@ -78,11 +72,6 @@ namespace MovieApi
 
 							ImageSource = webImage.Source,
 							Detail = "Runtime: "+detailsSerie.Runtime,
-						},
-						new TextCell
-						{
-							Text = "Gender",
-							Detail = gender,
 						},
 						new TextCell
 						{

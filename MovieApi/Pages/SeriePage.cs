@@ -53,12 +53,12 @@ namespace SerieApi
 				if (e.SelectedItem != null)
 				{
 					//Deselect row
-					listView.SelectedItem= null;
+					listView.SelectedItem = null;
 
 					SerieViewModel a = (SerieViewModel)e.SelectedItem;
 
 					//Ouvre la page de detail
-					await Navigation.PushAsync (new DetailsMSeriePage(a.Identifiant));
+					await Navigation.PushAsync (new DetailSeriePage(a.Identifiant));
 				}
 				return;
 			};

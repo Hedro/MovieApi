@@ -28,7 +28,7 @@ namespace MovieApi
 			searchbar.TextChanged += (sender, e) => {
 				if(searchbar.Text != "")
 				{
-					queryString = "https://api-v2launch.trakt.tv/search?query=" + searchbar.Text + "&type=show,movie";
+					queryString = "https://api-v2launch.trakt.tv/search?query=" + searchbar.Text + "&type=show,movie&extended=full,images";
 
 					ItemViewModel[] itemViewModel = Core.GetItem (queryString);
 
@@ -50,6 +50,29 @@ namespace MovieApi
 					searchbar,
 					listView
 				}
+			};
+
+			listView.ItemSelected += async (sender, e) => {
+
+				//Deselect row
+				listView.SelectedItem = null;
+
+				ItemViewModel a = (ItemViewModel) e.SelectedItem;
+
+				if (e.SelectedItem != null)
+				{
+					if(a.Type == "movie")
+					{
+						//Ouvre la page de detail
+						await Navigation.PushAsync (new DetailMoviePage(a.Identifiant));
+					}
+					if(a.Type == "show")
+					{
+						//Ouvre la page de detail
+						await Navigation.PushAsync (new DetailSeriePage(a.Identifiant));
+					}
+				}
+				return;
 			};
 
 			Content = stack;
@@ -105,6 +128,7 @@ namespace MovieApi
 					items.Add (new ItemViewModel {
 						Identifiant = item [i].Identifiant,
 						Name = item [i].Name + "\n\n(" + item [i].Year.ToString () + ")\n" + item[i].Type,
+						Type = item[i].Type,
 						Image = ImageSource.FromUri (new Uri (item [i].URLImage))
 					});
 				}

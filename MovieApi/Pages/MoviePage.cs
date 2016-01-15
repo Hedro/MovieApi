@@ -58,7 +58,7 @@ namespace MovieApi
 					MovieViewModel a = (MovieViewModel) e.SelectedItem;
 
 					//Ouvre la page de detail
-					await Navigation.PushAsync (new DetailsMoviePage(a.Identifiant));
+					await Navigation.PushAsync (new DetailMoviePage(a.Identifiant));
 				}
 				return;
 			};
