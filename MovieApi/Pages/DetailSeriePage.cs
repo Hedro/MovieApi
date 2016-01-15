@@ -48,19 +48,6 @@ namespace MovieApi
 
 			};
 
-			Grid grid = new Grid
-			{
-				VerticalOptions = LayoutOptions.FillAndExpand,
-				HeightRequest = 150,
-
-				ColumnDefinitions =
-				{
-					new ColumnDefinition {Width = new GridLength(.1, GridUnitType.Star)},
-				}
-			};
-			
-			grid.Children.Add(new Label { Text = detailsSerie.OverView }, 0, 4, 0, 1);
-
 			var sect1 = new TableView
 			{
 				Root = new TableRoot("Table Title")
@@ -69,38 +56,74 @@ namespace MovieApi
 					{
 						new ImageCell
 						{
-
 							ImageSource = webImage.Source,
-							Detail = "Runtime: "+detailsSerie.Runtime,
 						},
+
+						new TextCell
+						{
+							Text = "Certification",
+							Detail = detailsSerie.Certification,
+						},
+
+						new TextCell
+						{
+							Text = "Year",
+							Detail = detailsSerie.Year.ToString(),
+						},
+
+						new TextCell
+						{
+							Text = "Language",
+							Detail = detailsSerie.Language,
+						},
+
+						new TextCell
+						{
+							Text = "Country",
+							Detail = detailsSerie.Country,
+						},
+
+						new TextCell
+						{
+							Text = "Gender",
+							Detail = detailsSerie.Gender.Replace("\n","").Replace("[ ","").Replace("]",""),
+						},
+
 						new TextCell
 						{
 							Text = "Rating ("+detailsSerie.Vote+" votes)",
 							Detail = detailsSerie.Rating.ToString(),
 						},
+
 						new TextCell
 						{
 							Text = "Runtime",
 							Detail = detailsSerie.Runtime.ToString(),
 						},
+
 						new TextCell
 						{
 							Text = "Available Translation",
-							Detail = detailsSerie.AvailableTranslation.Replace("\n", "").Replace("[ ", "").Replace("]",""),
+							Detail = detailsSerie.AvailableTranslation.Replace("\n","").Replace("[ ","").Replace("]",""),
 						},
 
 						redirectImdb,
 						redirectToYoutubeTrailer,
+
 						new TextCell
 						{
-							Text = "Overview",
+							Text = "Overview ",
+						},
+
+						new TextCell
+						{
+							Text = detailsSerie.OverView,
 						},
 					},
 				}
 			};
 
 			layout.Children.Add(sect1);
-			layout.Children.Add(grid);
 
 			Content = layout;
 		}

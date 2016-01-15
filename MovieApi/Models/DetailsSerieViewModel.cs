@@ -18,7 +18,7 @@ namespace MovieApi.Model
 		public string UrlImage { get; set; }
 		public string UrlTrailer { get; set; }
 		public string Language { get; set; }
-		public string[] Gender { get; set; }
+		public string Gender { get; set; }
 		public string AvailableTranslation { get; set; }
 		public long Vote { get; set; }
 		public string Certification { get; set; }

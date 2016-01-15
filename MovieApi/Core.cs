@@ -153,7 +153,9 @@ namespace MovieApi
 			serieDetailViewModel.Imdb = (string)data["ids"]["imdb"].Value;
 			serieDetailViewModel.Runtime = (long)data["runtime"].Value;
 			serieDetailViewModel.AvailableTranslation = (string)data["available_translations"].ToString();
+			serieDetailViewModel.Gender = (string)data["genres"].ToString();
 			serieDetailViewModel.Year = (long)data["year"].Value;
+			serieDetailViewModel.Country = (string)data["country"].Value;
 			serieDetailViewModel.Certification = (string)data["certification"].Value;
 			serieDetailViewModel.Vote = (long)data["votes"].Value;
 			serieDetailViewModel.UrlTrailer = (string)data["trailer"].Value;
