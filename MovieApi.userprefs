@@ -1,11 +1,15 @@
 ﻿<Properties StartupItem="iOS/MovieApi.iOS.csproj" RefactoringSettings.EnableRefactorings="True">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone6s.9.2" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MovieApi/Pages/MoviePage.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/SQLite_iOS.cs">
     <Files>
-      <File FileName="MovieApi/Core.cs" Line="136" Column="6" />
-      <File FileName="MovieApi/Pages/DetailMoviePage.cs" Line="92" Column="23" />
-      <File FileName="MovieApi/Pages/MoviePage.cs" Line="60" Column="61" />
-      <File FileName="MovieApi/Models/DetailsViewModel.cs" Line="1" Column="1" />
+      <File FileName="MovieApi/Pages/DetailSeriePage.cs" Line="133" Column="4" />
+      <File FileName="MovieApi/Pages/DetailMoviePage.cs" Line="1" Column="1" />
+      <File FileName="MovieApi/Pages/MainPage.cs" Line="13" Column="3" />
+      <File FileName="MovieApi/Pages/MoviePage.cs" Line="1" Column="1" />
+      <File FileName="MovieApi/Pages/TypePage.cs" Line="84" Column="59" />
+      <File FileName="MovieApi/BaseDeDonnees/MovieOrSerieIsFav.cs" Line="12" Column="45" />
+      <File FileName="MovieApi/BaseDeDonnees/MovieOrSerieIsFavDataBase.cs" Line="17" Column="50" />
+      <File FileName="iOS/SQLite_iOS.cs" Line="37" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -10,3 +10,6 @@
 /Users/BOKSIC/MovieApi/MovieApi/bin/Debug/System.Net.Http.dll
 /Users/BOKSIC/MovieApi/MovieApi/bin/Debug/System.Net.Http.Primitives.dll
 /Users/BOKSIC/MovieApi/MovieApi/bin/Debug/System.Net.Http.Extensions.dll
+/Users/BOKSIC/MovieApi/MovieApi/bin/Debug/SQLitePCL.raw.dll
+/Users/BOKSIC/MovieApi/MovieApi/bin/Debug/SQLite-net.dll
+/Users/BOKSIC/MovieApi/MovieApi/bin/Debug/SQLite.Net.dll

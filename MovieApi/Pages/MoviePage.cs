@@ -55,10 +55,14 @@ namespace MovieApi
 					//Deselect row
 					listView.SelectedItem = null;
 
+					listView.IsEnabled = false;
+
 					MovieViewModel a = (MovieViewModel) e.SelectedItem;
 
 					//Ouvre la page de detail
 					await Navigation.PushAsync (new DetailMoviePage(a.Identifiant));
+
+					listView.IsEnabled = true;
 				}
 				return;
 			};

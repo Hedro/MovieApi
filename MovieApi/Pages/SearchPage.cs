@@ -63,13 +63,24 @@ namespace MovieApi
 				{
 					if(a.Type == "movie")
 					{
+						listView.IsEnabled = false;
+
 						//Ouvre la page de detail
 						await Navigation.PushAsync (new DetailMoviePage(a.Identifiant));
+
+						listView.IsEnabled = true;
 					}
 					if(a.Type == "show")
 					{
+						//Deselect row
+						listView.SelectedItem = null;
+
+						listView.IsEnabled = false;
+
 						//Ouvre la page de detail
 						await Navigation.PushAsync (new DetailSeriePage(a.Identifiant));
+
+						listView.IsEnabled = true;
 					}
 				}
 				return;
@@ -127,7 +138,7 @@ namespace MovieApi
 
 					items.Add (new ItemViewModel {
 						Identifiant = item [i].Identifiant,
-						Name = item [i].Name + "\n\n(" + item [i].Year.ToString () + ")\n" + item[i].Type,
+						Name = item [i].Name + "\n\n(" + item [i].Year.ToString () + ") " + item[i].Type,
 						Type = item[i].Type,
 						Image = ImageSource.FromUri (new Uri (item [i].URLImage))
 					});

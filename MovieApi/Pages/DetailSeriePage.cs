@@ -1,10 +1,14 @@
 ﻿using MovieApi.Model;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using Xamarin.Forms;
+
+using SQLite;
 
 namespace MovieApi
 {
@@ -21,7 +25,25 @@ namespace MovieApi
 			string urlImdb = "http://www.imdb.com/title/" + detailsSerie.Imdb + "/?ref_=fn_al_tt_1";
 
 			var webImage = new Image { Aspect = Aspect.AspectFit };
-			webImage.Source = ImageSource.FromUri(new Uri(detailsSerie.UrlImage));
+			if (detailsSerie.UrlImage != null)
+			{
+				webImage.Source = ImageSource.FromUri (new Uri (detailsSerie.UrlImage));
+			} 
+			else 
+			{
+				webImage.Source = ImageSource.FromUri (new Uri ("http://sd.keepcalm-o-matic.co.uk/i/error-404-democracy-not-found.png"));
+			}
+
+			string translation;
+
+			if(detailsSerie.AvailableTranslation == "[]")
+			{
+				translation = "not avaiable";
+			}
+			else
+			{
+				translation = detailsSerie.AvailableTranslation.Replace ("\n", "").Replace ("[ ", "").Replace ("]", "");
+			}
 
 			TextCell redirectImdb = new TextCell
 			{
@@ -29,9 +51,16 @@ namespace MovieApi
 				Detail = "Go on imdb.com"
 			};
 
-			redirectImdb.Tapped += (s, e) => {
-				Device.OpenUri(new Uri(urlImdb));
-			};
+			if (detailsSerie.Imdb != null && detailsSerie.Imdb != "") 
+			{
+				redirectImdb.Tapped += (s, e) => {
+					Device.OpenUri (new Uri (urlImdb));
+				};
+			}
+			else 
+			{
+				redirectImdb.Detail = "No imdb";
+			}
 
 			TextCell redirectToYoutubeTrailer = new TextCell
 			{
@@ -39,9 +68,16 @@ namespace MovieApi
 				Detail = "Go on youtube trailer"
 			};
 
-			redirectToYoutubeTrailer.Tapped += (s, e) => {
-				Device.OpenUri(new Uri(detailsSerie.UrlTrailer));
-			};
+			if (detailsSerie.Imdb != null && detailsSerie.Imdb != "") 
+			{
+				redirectToYoutubeTrailer.Tapped += (s, e) => {
+					Device.OpenUri(new Uri(detailsSerie.UrlTrailer));
+				};
+			}
+			else 
+			{
+				redirectToYoutubeTrailer.Detail = "No trailer";
+			}
 
 			var layout = new StackLayout
 			{
@@ -104,7 +140,7 @@ namespace MovieApi
 						new TextCell
 						{
 							Text = "Available Translation",
-							Detail = detailsSerie.AvailableTranslation.Replace("\n","").Replace("[ ","").Replace("]",""),
+							Detail = translation,
 						},
 
 						redirectImdb,

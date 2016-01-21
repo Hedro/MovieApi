@@ -64,30 +64,50 @@ namespace MovieApi
 
 			buttonPopular.Clicked += async (sender, e) => 
 			{
+				buttonPopular.IsEnabled = buttonAnticipated.IsEnabled = buttonTrending.IsEnabled = buttonBoxOffice.IsEnabled = buttonWatched.IsEnabled = false;
+
 				await Navigation.PushAsync (choix(type,"Popular"));
+
+				buttonPopular.IsEnabled = buttonAnticipated.IsEnabled = buttonTrending.IsEnabled = buttonBoxOffice.IsEnabled = buttonWatched.IsEnabled = true;
 			};
 
 			buttonAnticipated.Clicked += async (sender, e) => 
 			{
+				buttonPopular.IsEnabled = buttonAnticipated.IsEnabled = buttonTrending.IsEnabled = buttonBoxOffice.IsEnabled = buttonWatched.IsEnabled = false;
+
 				await Navigation.PushAsync (choix(type,"Anticipated"));
+
+				buttonPopular.IsEnabled = buttonAnticipated.IsEnabled = buttonTrending.IsEnabled = buttonBoxOffice.IsEnabled = buttonWatched.IsEnabled = true;
 			};
 
 			buttonTrending.Clicked += async (sender, e) => 
 			{
+				buttonPopular.IsEnabled = buttonAnticipated.IsEnabled = buttonTrending.IsEnabled = buttonBoxOffice.IsEnabled = buttonWatched.IsEnabled = false;
+
 				await Navigation.PushAsync (choix(type,"Trending"));
+
+				buttonPopular.IsEnabled = buttonAnticipated.IsEnabled = buttonTrending.IsEnabled = buttonBoxOffice.IsEnabled = buttonWatched.IsEnabled = true;
 			};
 
 			if (type == "Movie") 
 			{
 				buttonBoxOffice.Clicked += async (sender, e) => 
 				{
+					buttonPopular.IsEnabled = buttonAnticipated.IsEnabled = buttonTrending.IsEnabled = buttonBoxOffice.IsEnabled = buttonWatched.IsEnabled = false;
+
 					await Navigation.PushAsync (choix(type,"BoxOffice"));
+
+					buttonPopular.IsEnabled = buttonAnticipated.IsEnabled = buttonTrending.IsEnabled = buttonBoxOffice.IsEnabled = buttonWatched.IsEnabled = true;
 				};
 			}
 
 			buttonWatched.Clicked += async (sender, e) => 
 			{
+				buttonPopular.IsEnabled = buttonAnticipated.IsEnabled = buttonTrending.IsEnabled = buttonBoxOffice.IsEnabled = buttonWatched.IsEnabled = false;
+
 				await Navigation.PushAsync (choix(type,"Watched"));
+
+				buttonPopular.IsEnabled = buttonAnticipated.IsEnabled = buttonTrending.IsEnabled = buttonBoxOffice.IsEnabled = buttonWatched.IsEnabled = true;
 			};
 		}
 
@@ -104,5 +124,3 @@ namespace MovieApi
 		}
 	}
 }
-
-

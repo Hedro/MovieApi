@@ -124,17 +124,63 @@ namespace MovieApi
 			dynamic data = JsonConvert.DeserializeObject(results);
 
 			movieDetailViewModel.Imdb = (string)data["ids"]["imdb"].Value;;
-			movieDetailViewModel.OverView = (string)data["overview"].Value;
+
+			if (data ["overview"].Value == null || data ["overview"].Value == "") 
+			{
+				movieDetailViewModel.OverView = "n/a";
+			}
+			else
+			{
+				movieDetailViewModel.OverView = (string)data["overview"].Value;
+			}
+				
 			movieDetailViewModel.Title = (string)data["title"].Value;
+
 			movieDetailViewModel.UrlImage = (string)data["images"]["poster"]["thumb"].Value;
-			movieDetailViewModel.Released = (string)data["released"].Value;
-			movieDetailViewModel.Year = (long)data["year"].Value;
-			movieDetailViewModel.Certification = (string)data["certification"].Value;
+
+			if (data ["released"].Value == null || data ["released"].Value == "") 
+			{
+				movieDetailViewModel.Released = "n/a";
+			}
+			else
+			{
+				movieDetailViewModel.Released = (string)data["released"].Value;
+			}
+
+			if(data["year"].Value == null)
+			{
+				movieDetailViewModel.Year = 0;
+			}
+			else
+			{
+				movieDetailViewModel.Year = (long)data["year"].Value;
+			}
+
+			if(data["certification"].Value == "" || data["certification"].Value == null)
+			{
+				movieDetailViewModel.Certification = "n/a";
+			}
+			else
+			{
+				movieDetailViewModel.Certification = (string)data["certification"].Value;
+			}
+
 			movieDetailViewModel.Vote = (long)data["votes"].Value;
+
 			movieDetailViewModel.Tagline = (string)data["tagline"].Value;
+
 			movieDetailViewModel.UrlTrailer = (string)data["trailer"].Value;
+
 			movieDetailViewModel.Rating = (long)data["rating"].Value;
-			movieDetailViewModel.Language = (string)data["language"].Value;
+
+			if(data["language"].Value == "" || data["language"].Value == null)
+			{
+				movieDetailViewModel.Language = "n/a";
+			}
+			else
+			{
+				movieDetailViewModel.Language = (string)data["language"].Value;
+			}
 
 			return movieDetailViewModel;
 		}
@@ -147,20 +193,59 @@ namespace MovieApi
 
 			dynamic data = JsonConvert.DeserializeObject(results);
 
-			serieDetailViewModel.OverView = (string)data["overview"].Value;
+			if (data ["overview"].Value == null || data ["overview"].Value == "") 
+			{
+				serieDetailViewModel.OverView = "n/a";
+			}
+			else
+			{
+				serieDetailViewModel.OverView = (string)data["overview"].Value;
+			}
+
 			serieDetailViewModel.Title = (string)data["title"].Value;
+
 			serieDetailViewModel.UrlImage = (string)data["images"]["poster"]["thumb"].Value;
+
 			serieDetailViewModel.Imdb = (string)data["ids"]["imdb"].Value;
+
 			serieDetailViewModel.Runtime = (long)data["runtime"].Value;
+
 			serieDetailViewModel.AvailableTranslation = (string)data["available_translations"].ToString();
+
 			serieDetailViewModel.Gender = (string)data["genres"].ToString();
-			serieDetailViewModel.Year = (long)data["year"].Value;
+
+			if(data["year"].Value == null)
+			{
+				serieDetailViewModel.Year = 0;
+			}
+			else
+			{
+				serieDetailViewModel.Year = (long)data["year"].Value;
+			}
 			serieDetailViewModel.Country = (string)data["country"].Value;
-			serieDetailViewModel.Certification = (string)data["certification"].Value;
+			if(data["certification"].Value == "" || data["certification"].Value == null)
+			{
+				serieDetailViewModel.Certification = "n/a";
+			}
+			else
+			{
+				serieDetailViewModel.Certification = (string)data["certification"].Value;
+			}
+
 			serieDetailViewModel.Vote = (long)data["votes"].Value;
+
 			serieDetailViewModel.UrlTrailer = (string)data["trailer"].Value;
+
 			serieDetailViewModel.Rating = (long)data["rating"].Value;
-			serieDetailViewModel.Language = (string)data["language"].Value;
+
+			if(data["language"].Value == "" || data["language"].Value == null)
+			{
+				serieDetailViewModel.Language = "n/a";
+			}
+			else
+			{
+				serieDetailViewModel.Language = (string)data["language"].Value;
+			}
 
 			return serieDetailViewModel;
 		}

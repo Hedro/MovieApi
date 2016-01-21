@@ -91,6 +91,8 @@ class MonoPackageManager_Resources {
 		"Xamarin.Forms.Core.dll",
 		"Xamarin.Forms.Xaml.dll",
 		"Xamarin.Forms.Platform.dll",
+		"SQLite.Net.dll",
+		"SQLite.Net.Platform.XamarinAndroid.dll",
 		"MovieApi.dll",
 		"System.Collections.Concurrent.dll",
 		"System.Collections.dll",
