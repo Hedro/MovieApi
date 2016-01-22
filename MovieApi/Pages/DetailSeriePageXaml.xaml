@@ -39,20 +39,22 @@
 
       <Label x:Name="Title"
              Grid.Row="0" Grid.Column="1"
-             Grid.ColumnSpan="3"
+             Grid.ColumnSpan="2"
              FontSize="20"
              FontAttributes="Bold"
            />
 
       <Image x:Name="Fav"
              Grid.Row="2" Grid.Column="1"
+             Grid.ColumnSpan="2"
              HeightRequest="30"
              WidthRequest="30"
            
            />
 
-      <Label x:Name="Tagline"
+      <Label x:Name="Genders"
              Grid.Row="1" Grid.Column="1"
+             Grid.ColumnSpan="2"
              FontAttributes="Italic"
            />
 
@@ -116,16 +118,6 @@
 
       <Label x:Name="AvailableTranslation"
               Grid.Row="10" Grid.Column="1"
-           />
-      
-      <Label Text="Genders :"
-              Grid.Row="11" Grid.Column="0"
-              FontSize="18"
-              FontAttributes="Bold"
-          />
-
-      <Label x:Name="Genders"
-              Grid.Row="12" Grid.Column="0"
            />
       
       <Label Text="Link"
