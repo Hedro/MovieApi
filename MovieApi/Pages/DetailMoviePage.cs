@@ -21,15 +21,33 @@ namespace MovieApi
 			string queryString = "https://api-v2launch.trakt.tv/movies/" + id + "?extended=full,images";
 
 			Image favImage = new Image();
-			favImage.Source = "etoileOff.jpg";
 
-			var image_off = 1;
+			MovieOrSerieIsFav a = _database.GetData (id);
+
+			int Favori = 0;
+
+			ImageCell imageFavoris = new ImageCell
+			{
+				ImageSource = favImage.Source,
+			};
+
+			if (a != null) 
+			{
+				Favori = 1;
+				imageFavoris.ImageSource = "etoileOn.png";
+			} 
+			else 
+			{
+				Favori = 0;
+				imageFavoris.ImageSource = "etoileOff.png";
+			}
 
 			movieDetails = Core.GetMovieDetails(queryString);
 
 			string urlImdb = "http://www.imdb.com/title/" + movieDetails.Imdb + "/?ref_=fn_al_tt_1";
 
 			var webImage = new Image { Aspect = Aspect.AspectFit };
+
 			if (movieDetails.UrlImage != null) 
 			{
 				webImage.Source = ImageSource.FromUri(new Uri(movieDetails.UrlImage));
@@ -55,11 +73,6 @@ namespace MovieApi
 			{
 				redirectImdb.Detail = "No imdb";
 			}
-
-			ImageCell imageFavoris = new ImageCell
-			{
-				ImageSource = favImage.Source,
-			};
 
 			TextCell redirectToYoutubeTrailer = new TextCell
 			{
@@ -117,6 +130,7 @@ namespace MovieApi
 
 						redirectImdb,
 						redirectToYoutubeTrailer,
+
 						new TextCell
 						{
 							Text = "Overview",
@@ -129,23 +143,27 @@ namespace MovieApi
 				}
 			};
 
+			sect1.HasUnevenRows = false;
+
 			layout.Children.Add(sect1);
 
 			imageFavoris.Tapped += (s, e) =>
 			{
-				if (image_off == 1)
+				if (Favori != 1)
 				{
-					image_off = 0;
+					Favori = 1;
 					layout.Children.Remove(sect1);
 					imageFavoris.ImageSource = "etoileOn.png";
 					layout.Children.Add(sect1);
+					_database.AddData(id, movieDetails.Title + "\n\n(movie)", movieDetails.UrlImage, "movie");
 				}
 				else
 				{
-					image_off = 1;
+					Favori = 0;
 					layout.Children.Remove(sect1);
 					imageFavoris.ImageSource = "etoileOff.png";
 					layout.Children.Add(sect1);
+					_database.DeleteData(id);
 				}
 			};
 

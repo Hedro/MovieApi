@@ -14,11 +14,37 @@ namespace MovieApi
 {
 	public class DetailSeriePage : ContentPage
 	{
+		private MovieOrSerieIsFavDataBase _database;
+
 		public DetailsSerieViewModel detailsSerie { get; set; }
 
 		public DetailSeriePage(string id)
 		{
+			_database = new MovieOrSerieIsFavDataBase ();
+
 			string queryString = "https://api-v2launch.trakt.tv/shows/" + id + "?extended=full,images";
+
+			Image favImage = new Image();
+
+			MovieOrSerieIsFav a = _database.GetData (id);
+
+			int Favori = 0;
+
+			ImageCell imageFavoris = new ImageCell
+			{
+				ImageSource = favImage.Source,
+			};
+
+			if (a != null) 
+			{
+				Favori = 1;
+				imageFavoris.ImageSource = "etoileOn.png";
+			} 
+			else 
+			{
+				Favori = 0;
+				imageFavoris.ImageSource = "etoileOff.png";
+			}
 
 			detailsSerie = Core.GetSerieDetails(queryString);
 
@@ -90,6 +116,8 @@ namespace MovieApi
 				{
 					new TableSection(detailsSerie.Title +' '+ detailsSerie.Year+" ("+detailsSerie.Language+") "+detailsSerie.Certification)
 					{
+						imageFavoris,
+
 						new ImageCell
 						{
 							ImageSource = webImage.Source,
@@ -160,6 +188,26 @@ namespace MovieApi
 			};
 
 			layout.Children.Add(sect1);
+
+			imageFavoris.Tapped += (s, e) =>
+			{
+				if (Favori != 1)
+				{
+					Favori = 1;
+					layout.Children.Remove(sect1);
+					imageFavoris.ImageSource = "etoileOn.png";
+					layout.Children.Add(sect1);
+					_database.AddData(id, detailsSerie.Title + "\n\n(show)", detailsSerie.UrlImage, "show");
+				}
+				else
+				{
+					Favori = 0;
+					layout.Children.Remove(sect1);
+					imageFavoris.ImageSource = "etoileOff.png";
+					layout.Children.Add(sect1);
+					_database.DeleteData(id);
+				}
+			};
 
 			Content = layout;
 		}
