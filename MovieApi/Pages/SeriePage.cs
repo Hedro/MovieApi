@@ -60,7 +60,7 @@ namespace SerieApi
 					SerieViewModel a = (SerieViewModel)e.SelectedItem;
 
 					//Ouvre la page de detail
-					await Navigation.PushAsync (new DetailSeriePage(a.Identifiant));
+					await Navigation.PushAsync (new DetailSeriePageXaml(a.Identifiant));
 
 					listView.IsEnabled = true;
 				}

@@ -60,7 +60,7 @@ namespace MovieApi
 					MovieViewModel a = (MovieViewModel) e.SelectedItem;
 
 					//Ouvre la page de detail
-					await Navigation.PushAsync (new DetailMoviePage(a.Identifiant));
+					await Navigation.PushAsync (new DetailMoviePageXaml(a.Identifiant));
 
 					listView.IsEnabled = true;
 				}

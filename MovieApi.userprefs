@@ -2,11 +2,9 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone6s.9.2" />
   <MonoDevelop.Ide.Workbench ActiveDocument="MovieApi/Pages/DetailMoviePage.cs">
     <Files>
-      <File FileName="MovieApi/Pages/DetailMoviePage.cs" Line="153" Column="1" />
-      <File FileName="MovieApi/BaseDeDonnees/MovieOrSerieIsFavDataBase.cs" Line="53" Column="28" />
-      <File FileName="MovieApi/Pages/FavPage.cs" Line="24" Column="1" />
-      <File FileName="MovieApi/Pages/MainPage.cs" Line="71" Column="45" />
-      <File FileName="MovieApi/BaseDeDonnees/MovieOrSerieIsFav.cs" Line="22" Column="216" />
+      <File FileName="MovieApi/Pages/FavPage.cs" Line="42" Column="32" />
+      <File FileName="MovieApi/Pages/MainPage.cs" Line="36" Column="49" />
+      <File FileName="MovieApi/Pages/DetailMoviePage.cs" Line="155" Column="25" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

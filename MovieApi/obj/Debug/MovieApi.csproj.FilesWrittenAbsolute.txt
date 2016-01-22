@@ -13,3 +13,7 @@
 /Users/BOKSIC/MovieApi/MovieApi/bin/Debug/SQLitePCL.raw.dll
 /Users/BOKSIC/MovieApi/MovieApi/bin/Debug/SQLite-net.dll
 /Users/BOKSIC/MovieApi/MovieApi/bin/Debug/SQLite.Net.dll
+/Users/BOKSIC/MovieApi/MovieApi/obj/Debug/MovieApi.Pages.DetailMoviePageXaml.xaml.g.cs
+/Users/BOKSIC/MovieApi/MovieApi/obj/Debug/MovieApi.Pages.DetailMoviePageXaml.xaml
+/Users/BOKSIC/MovieApi/MovieApi/obj/Debug/MovieApi.Pages.DetailSeriePageXaml.xaml.g.cs
+/Users/BOKSIC/MovieApi/MovieApi/obj/Debug/MovieApi.Pages.DetailSeriePageXaml.xaml

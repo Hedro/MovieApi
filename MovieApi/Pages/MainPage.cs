@@ -9,8 +9,6 @@ namespace MovieApi
 {
 	public class MainPage : ContentPage
 	{
-		private MovieOrSerieIsFavDataBase _database;
-
 		Button buttonMovie = new Button()
 		{
 			Text = String.Format("Movies")
@@ -33,8 +31,6 @@ namespace MovieApi
 		
 		public MainPage ()
 		{
-			_database = new MovieOrSerieIsFavDataBase ();
-
 			this.Content = new StackLayout 
 			{
 				Children = 

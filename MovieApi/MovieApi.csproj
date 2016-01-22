@@ -35,10 +35,8 @@
     <Compile Include="DataServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\MovieViewModel.cs" />
-    <Compile Include="Pages\DetailMoviePage.cs" />
     <Compile Include="Pages\MoviePage.cs" />
     <Compile Include="Pages\SeriePage.cs" />
-    <Compile Include="Pages\DetailSeriePage.cs" />
     <Compile Include="Models\SerieViewModel.cs" />
     <Compile Include="Pages\MainPage.cs" />
     <Compile Include="Pages\TypePage.cs" />
@@ -50,6 +48,12 @@
     <Compile Include="BaseDeDonnees\MovieOrSerieIsFav.cs" />
     <Compile Include="BaseDeDonnees\MovieOrSerieIsFavDataBase.cs" />
     <Compile Include="Pages\FavPage.cs" />
+    <Compile Include="Pages\DetailMoviePageXaml.xaml.cs">
+      <DependentUpon>DetailMoviePageXaml.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DetailSeriePageXaml.xaml.cs">
+      <DependentUpon>DetailSeriePageXaml.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
@@ -87,7 +91,14 @@
     <Folder Include="Properties\" />
     <Folder Include="Pages\" />
     <Folder Include="Models\" />
-    <Folder Include="Images\" />
     <Folder Include="BaseDeDonnees\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\DetailMoviePageXaml.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\DetailSeriePageXaml.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

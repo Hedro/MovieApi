@@ -50,7 +50,7 @@ namespace MovieApi
 						listView.IsEnabled = false;
 
 						//Ouvre la page de detail
-						await Navigation.PushAsync (new DetailMoviePage(a.MovieOrSerieID));
+						await Navigation.PushAsync (new DetailMoviePageXaml(a.MovieOrSerieID));
 
 						listView.IsEnabled = true;
 					}
@@ -62,7 +62,7 @@ namespace MovieApi
 						listView.IsEnabled = false;
 
 						//Ouvre la page de detail
-						await Navigation.PushAsync (new DetailSeriePage(a.MovieOrSerieID));
+						await Navigation.PushAsync (new DetailSeriePageXaml(a.MovieOrSerieID));
 
 						listView.IsEnabled = true;
 					}

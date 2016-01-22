@@ -20,3 +20,9 @@
 /Users/BOKSIC/MovieApi/iOS/bin/iPhoneSimulator/Debug/Newtonsoft.Json.dll
 /Users/BOKSIC/MovieApi/iOS/obj/iPhoneSimulator/Debug/optimized/etoileOff.png
 /Users/BOKSIC/MovieApi/iOS/obj/iPhoneSimulator/Debug/optimized/etoileOn.png
+/Users/BOKSIC/MovieApi/iOS/obj/iPhoneSimulator/Debug/optimized/FavNon.png
+/Users/BOKSIC/MovieApi/iOS/obj/iPhoneSimulator/Debug/optimized/FavOui.png
+/Users/BOKSIC/MovieApi/iOS/obj/iPhoneSimulator/Debug/optimized/imdb-icon.png
+/Users/BOKSIC/MovieApi/iOS/obj/iPhoneSimulator/Debug/optimized/YouTube-icon.png
+/Users/BOKSIC/MovieApi/iOS/obj/iPhoneSimulator/Debug/optimized/imdbicon.png
+/Users/BOKSIC/MovieApi/iOS/obj/iPhoneSimulator/Debug/optimized/YouTubeIcon.png

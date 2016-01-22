@@ -133,5 +133,11 @@
   <ItemGroup>
     <BundleResource Include="Resources\etoileOff.png" />
     <BundleResource Include="Resources\etoileOn.png" />
+    <BundleResource Include="Resources\FavNon.png" />
+    <BundleResource Include="Resources\FavOui.png" />
+    <BundleResource Include="Resources\imdbicon.png">
+      <DeployService-Deploy>True</DeployService-Deploy>
+    </BundleResource>
+    <BundleResource Include="Resources\YouTubeIcon.png" />
   </ItemGroup>
 </Project>
