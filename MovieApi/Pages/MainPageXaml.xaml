@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MovieApi.MainPageXaml">
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <Style x:Key="ButtonStyle1" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="#064272"/>
+        <Setter Property="FontSize" Value="30"/>
+        <Setter Property="BorderRadius" Value="20"/>
+      </Style>
+      <Style x:Key="ButtonStyle2" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="#006573"/>
+        <Setter Property="FontSize" Value="30"/>
+        <Setter Property="BorderRadius" Value="20"/>
+      </Style>
+      <Style x:Key="ButtonStyle3" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="#008B8D"/>
+        <Setter Property="FontSize" Value="30"/>
+        <Setter Property="BorderRadius" Value="20"/>
+      </Style>
+      <Style x:Key="ButtonStyle4" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="#81BEAA"/>
+        <Setter Property="FontSize" Value="30"/>
+        <Setter Property="BorderRadius" Value="20"/>
+      </Style>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  <ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness"
+                iOS="0, 20, 0, 0" />
+  </ContentPage.Padding>
+
+  <ScrollView>
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
+
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+
+      <Button x:Name="MovieButton" Text="Movies" Style="{StaticResource ButtonStyle1}" Grid.Row="0" Grid.Column="0" TextColor="White"/>
+      <Button x:Name="SerieButton" Text="Shows" Style="{StaticResource ButtonStyle2}" Grid.Row="1" Grid.Column="0" TextColor="White"/>
+      <Button x:Name="FavButton" Text="Favorites" Style="{StaticResource ButtonStyle3}" Grid.Row="2" Grid.Column="0" TextColor="White"/>
+      <Button x:Name="SearchButton" Text="Search" Style="{StaticResource ButtonStyle4}" Grid.Row="3" Grid.Column="0" TextColor="White"/>
+    </Grid>
+  </ScrollView>
+</ContentPage>

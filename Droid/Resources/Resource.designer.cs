@@ -26,6 +26,8 @@ namespace MovieApi.Droid
 		
 		public static void UpdateIdValues()
 		{
+			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.ApplicationName = global::MovieApi.Droid.Resource.String.ApplicationName;
+			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.Hello = global::MovieApi.Droid.Resource.String.Hello;
 			global::Xamarin.Forms.Platform.Resource.Animation.abc_fade_in = global::MovieApi.Droid.Resource.Animation.abc_fade_in;
 			global::Xamarin.Forms.Platform.Resource.Animation.abc_fade_out = global::MovieApi.Droid.Resource.Animation.abc_fade_out;
 			global::Xamarin.Forms.Platform.Resource.Animation.abc_grow_fade_in_from_bottom = global::MovieApi.Droid.Resource.Animation.abc_grow_fade_in_from_bottom;
@@ -1484,8 +1486,6 @@ namespace MovieApi.Droid
 			global::Xamarin.Forms.Platform.Resource.Styleable.ViewStubCompat_android_id = global::MovieApi.Droid.Resource.Styleable.ViewStubCompat_android_id;
 			global::Xamarin.Forms.Platform.Resource.Styleable.ViewStubCompat_android_inflatedId = global::MovieApi.Droid.Resource.Styleable.ViewStubCompat_android_inflatedId;
 			global::Xamarin.Forms.Platform.Resource.Styleable.ViewStubCompat_android_layout = global::MovieApi.Droid.Resource.Styleable.ViewStubCompat_android_layout;
-			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.ApplicationName = global::MovieApi.Droid.Resource.String.ApplicationName;
-			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.Hello = global::MovieApi.Droid.Resource.String.Hello;
 		}
 		
 		public partial class Animation
@@ -3323,11 +3323,14 @@ namespace MovieApi.Droid
 			// aapt resource value: 0x7f020066
 			public const int mr_ic_settings_light = 2130837606;
 			
-			// aapt resource value: 0x7f020068
-			public const int notification_template_icon_bg = 2130837608;
-			
 			// aapt resource value: 0x7f020067
-			public const int YouTubeIcon = 2130837607;
+			public const int notfound = 2130837607;
+			
+			// aapt resource value: 0x7f020069
+			public const int notification_template_icon_bg = 2130837609;
+			
+			// aapt resource value: 0x7f020068
+			public const int YouTubeIcon = 2130837608;
 			
 			static Drawable()
 			{

@@ -11,7 +11,7 @@ using MovieApi.iOS;
 
 namespace MovieApi.iOS
 {
-	public class SQLite_iOS : ISQLite
+	public class SQLite_iOS: ISQLite
 	{
 		public SQLite_iOS ()
 		{

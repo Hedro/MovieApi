@@ -27,7 +27,14 @@ namespace MovieApi
 					movieViewModel[i].Identifiant = (string)data[i]["movie"]["ids"]["slug"].Value;
 					movieViewModel[i].Name = (string)data[i]["movie"]["title"].Value;
 					movieViewModel[i].Year = (long)data[i]["movie"]["year"].Value;
-					movieViewModel[i].URLImage = (string)data[i]["movie"]["images"]["poster"]["thumb"].Value;
+					if(data[i]["movie"]["images"]["poster"]["thumb"].Value == null || data[i]["movie"]["images"]["poster"]["thumb"].Value == "")
+					{
+						movieViewModel[i].URLImage = "http://i.imgur.com/u6dVu5R.png?1";
+					}
+					else
+					{
+						movieViewModel[i].URLImage = (string)data[i]["movie"]["images"]["poster"]["thumb"].Value;
+					}
 				}
 
 				return movieViewModel;
@@ -55,7 +62,15 @@ namespace MovieApi
 					serieViewModel[i].Identifiant = (string)data[i]["show"]["ids"]["slug"].Value;
 					serieViewModel[i].Name = (string)data[i]["show"]["title"].Value;
 					serieViewModel[i].Year = (long)data[i]["show"]["year"].Value;
-					serieViewModel[i].URLImage = (string)data[i]["show"]["images"]["poster"]["thumb"].Value;
+
+					if(data[i]["show"]["images"]["poster"]["thumb"].Value == null || data[i]["show"]["images"]["poster"]["thumb"].Value == "")
+					{
+						serieViewModel[i].URLImage = "http://i.imgur.com/u6dVu5R.png?1";
+					}
+					else
+					{
+						serieViewModel[i].URLImage = (string)data[i]["show"]["images"]["poster"]["thumb"].Value;
+					}
 				}
 
 				return serieViewModel;
@@ -104,7 +119,15 @@ namespace MovieApi
 					{
 						itemViewModel [i].Year = data [i] [itemViewModel [i].Type] ["year"].Value.ToString ();
 					}
-					itemViewModel[i].URLImage = (string)data[i][itemViewModel[i].Type]["images"]["poster"]["thumb"].Value;
+
+					if(data[i][itemViewModel[i].Type]["images"]["poster"]["thumb"].Value == null  || data[i][itemViewModel[i].Type]["images"]["poster"]["thumb"].Value == "")
+					{
+						itemViewModel[i].URLImage = "http://i.imgur.com/u6dVu5R.png?1";
+					}
+					else
+					{
+						itemViewModel[i].URLImage = (string)data[i][itemViewModel[i].Type]["images"]["poster"]["thumb"].Value;
+					}
 				}
 
 				return itemViewModel;
@@ -136,7 +159,14 @@ namespace MovieApi
 				
 			movieDetailViewModel.Title = (string)data["title"].Value;
 
-			movieDetailViewModel.UrlImage = (string)data["images"]["poster"]["thumb"].Value;
+			if (data ["images"]["poster"]["thumb"].Value == null || data ["images"]["poster"]["thumb"].Value == "") 
+			{
+				movieDetailViewModel.UrlImage = "http://i.imgur.com/u6dVu5R.png?1";
+			}
+			else
+			{
+				movieDetailViewModel.UrlImage = (string)data["images"]["poster"]["thumb"].Value;
+			}
 
 			if (data ["released"].Value == null || data ["released"].Value == "") 
 			{
@@ -165,13 +195,41 @@ namespace MovieApi
 				movieDetailViewModel.Certification = (string)data["certification"].Value;
 			}
 
-			movieDetailViewModel.Vote = (long)data["votes"].Value;
+			if(data["votes"].Value == null)
+			{
+				movieDetailViewModel.Vote = 0;
+			}
+			else
+			{
+				movieDetailViewModel.Vote = (long)data["votes"].Value;
+			}
 
-			movieDetailViewModel.Tagline = (string)data["tagline"].Value;
+			if(data["tagline"].Value == "" || data["tagline"].Value == null)
+			{
+				movieDetailViewModel.Tagline = "n/a";
+			}
+			else
+			{
+				movieDetailViewModel.Tagline = (string)data["tagline"].Value;
+			}
 
-			movieDetailViewModel.UrlTrailer = (string)data["trailer"].Value;
+			if(data["trailer"].Value == "" || data["trailer"].Value == null)
+			{
+				movieDetailViewModel.UrlTrailer = "n/a";
+			}
+			else
+			{
+				movieDetailViewModel.UrlTrailer = (string)data["trailer"].Value;
+			}
 
-			movieDetailViewModel.Rating = (long)data["rating"].Value;
+			if(data["rating"].Value == null)
+			{
+				movieDetailViewModel.Rating = 0;
+			}
+			else
+			{
+				movieDetailViewModel.Rating = (long)data["rating"].Value;
+			}
 
 			if(data["language"].Value == "" || data["language"].Value == null)
 			{
@@ -195,7 +253,7 @@ namespace MovieApi
 
 			if (data ["overview"].Value == null || data ["overview"].Value == "") 
 			{
-				serieDetailViewModel.OverView = "n/a";
+				serieDetailViewModel.OverView = "http://i.imgur.com/u6dVu5R.png?1";
 			}
 			else
 			{
@@ -204,11 +262,25 @@ namespace MovieApi
 
 			serieDetailViewModel.Title = (string)data["title"].Value;
 
-			serieDetailViewModel.UrlImage = (string)data["images"]["poster"]["thumb"].Value;
+			if(data["images"]["poster"]["thumb"].Value == "" || data["images"]["poster"]["thumb"].Value == null)
+			{
+				serieDetailViewModel.Country = "n/a";
+			}
+			else
+			{
+				serieDetailViewModel.UrlImage = (string)data["images"]["poster"]["thumb"].Value;
+			}
 
 			serieDetailViewModel.Imdb = (string)data["ids"]["imdb"].Value;
 
-			serieDetailViewModel.Runtime = (long)data["runtime"].Value;
+			if (data ["runtime"].Value == null) 
+			{
+				serieDetailViewModel.Runtime = 0;
+			}
+			else 
+			{
+				serieDetailViewModel.Runtime = (long)data ["runtime"].Value;
+			}
 
 			serieDetailViewModel.AvailableTranslation = (string)data["available_translations"].ToString();
 
@@ -222,7 +294,16 @@ namespace MovieApi
 			{
 				serieDetailViewModel.Year = (long)data["year"].Value;
 			}
-			serieDetailViewModel.Country = (string)data["country"].Value;
+
+			if(data["country"].Value == "" || data["country"].Value == null)
+			{
+				serieDetailViewModel.Country = "n/a";
+			}
+			else
+			{
+				serieDetailViewModel.Country = (string)data["country"].Value;
+			}
+
 			if(data["certification"].Value == "" || data["certification"].Value == null)
 			{
 				serieDetailViewModel.Certification = "n/a";
@@ -232,11 +313,32 @@ namespace MovieApi
 				serieDetailViewModel.Certification = (string)data["certification"].Value;
 			}
 
-			serieDetailViewModel.Vote = (long)data["votes"].Value;
+			if(data["votes"].Value == null)
+			{
+				serieDetailViewModel.Vote = 0;
+			}
+			else
+			{
+				serieDetailViewModel.Vote = (long)data["votes"].Value;
+			}
 
-			serieDetailViewModel.UrlTrailer = (string)data["trailer"].Value;
+			if(data["trailer"].Value == "" || data["trailer"].Value == null)
+			{
+				serieDetailViewModel.UrlTrailer = "n/a";
+			}
+			else
+			{
+				serieDetailViewModel.UrlTrailer = (string)data["trailer"].Value;
+			}
 
-			serieDetailViewModel.Rating = (long)data["rating"].Value;
+			if(data["votes"].Value == null)
+			{
+				serieDetailViewModel.Rating = 0;
+			}
+			else
+			{
+				serieDetailViewModel.Rating = (long)data["rating"].Value;
+			}
 
 			if(data["language"].Value == "" || data["language"].Value == null)
 			{

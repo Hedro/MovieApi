@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MovieApi.TypePageXaml">
+	<ContentPage.Resources>
+    <ResourceDictionary>
+      <Style x:Key="ButtonStyle" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="#162027"/>
+        <Setter Property="TextColor" Value="White"/>
+        <Setter Property="FontSize" Value="30"/>
+        <Setter Property="BorderRadius" Value="20"/>
+      </Style>
+      <Style x:Key="ButtonStyle1" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="#113848"/>
+        <Setter Property="TextColor" Value="White"/>
+        <Setter Property="FontSize" Value="30"/>
+        <Setter Property="BorderRadius" Value="20"/>
+      </Style>
+      <Style x:Key="ButtonStyle2" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="#026672"/>
+        <Setter Property="TextColor" Value="White"/>
+        <Setter Property="FontSize" Value="30"/>
+        <Setter Property="BorderRadius" Value="20"/>
+      </Style>
+      <Style x:Key="ButtonStyle3" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="#046562"/>
+        <Setter Property="FontSize" Value="30"/>
+        <Setter Property="TextColor" Value="White"/>
+        <Setter Property="BorderRadius" Value="20"/>
+      </Style>
+    <Style x:Key="ButtonStyle4" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="#55A773"/>
+      <Setter Property="FontSize" Value="30"/>
+      <Setter Property="TextColor" Value="White"/>
+    <Setter Property="BorderRadius" Value="20"/>
+      </Style>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  <ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness"
+                iOS="0, 20, 0, 0" />
+  </ContentPage.Padding>
+
+  <ScrollView>
+    <Grid x:Name="Row">
+      <Grid.RowDefinitions >
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
+
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+
+      <Button x:Name="ButtonPopular" Text="POPULAR" Style="{StaticResource ButtonStyle}" Grid.Row="0" Grid.Column="0" />
+      <Button x:Name="ButtonAnticipated" Text="ANTICIPATED" Style="{StaticResource ButtonStyle1}" Grid.Row="1" Grid.Column="0"/>
+      <Button x:Name="ButtonTrending" Text="TRENDING" Style="{StaticResource ButtonStyle2}" Grid.Row="2" Grid.Column="0"/>
+      <Button x:Name="ButtonWatched" Text="WATCHED" Style="{StaticResource ButtonStyle3}" Grid.Row="3" Grid.Column="0"/>
+      <Button x:Name="ButtonBoxOffice" Text="BOX OFFICE" Style="{StaticResource ButtonStyle4}" Grid.Row="4" Grid.Column="0"/>
+    </Grid>
+  </ScrollView>
+</ContentPage>

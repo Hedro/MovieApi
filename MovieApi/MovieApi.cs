@@ -9,7 +9,7 @@ namespace MovieApi
 	{
 		public App ()
 		{
-			MainPage = new NavigationPage(new MovieApi.MainPage());
+			MainPage = new NavigationPage(new MovieApi.MainPageXaml());
 		}
 
 		protected override void OnStart ()

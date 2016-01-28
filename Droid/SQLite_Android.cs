@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using SQLite;
 using Xamarin.Forms;
 using MovieApi.Android;
 

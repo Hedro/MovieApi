@@ -2,6 +2,7 @@
 
 using Xamarin.Forms;
 using System.Collections.ObjectModel;
+using System.Text.RegularExpressions;
 
 namespace MovieApi
 {
@@ -26,7 +27,7 @@ namespace MovieApi
 			listView.RowHeight = 100;
 
 			searchbar.TextChanged += (sender, e) => {
-				if(searchbar.Text != "")
+				if(searchbar.Text != "" && Regex.IsMatch(searchbar.Text, @"^[a-zA-Z0-9\s,]*$"))
 				{
 					queryString = "https://api-v2launch.trakt.tv/search?query=" + searchbar.Text + "&type=show,movie&extended=full,images";
 
@@ -89,6 +90,7 @@ namespace MovieApi
 			Content = stack;
 		}
 
+		//Definition de la structure des cellules
 		public class CustomItemCell : ViewCell
 		{
 			public CustomItemCell()
@@ -130,16 +132,11 @@ namespace MovieApi
 					{
 						return;
 					}
-
-					if (item [i].URLImage == null) 
-					{
-						item [i].URLImage = "http://sd.keepcalm-o-matic.co.uk/i/error-404-democracy-not-found.png";
-					}
-
+						
 					items.Add (new ItemViewModel {
 						Identifiant = item [i].Identifiant,
-						Name = item [i].Name + "\n\n(" + item [i].Year.ToString () + ") " + item[i].Type,
-						Type = item[i].Type,
+						Name = item [i].Name + "\n\n(" + item [i].Year.ToString () + ") " + item [i].Type,
+						Type = item [i].Type,
 						Image = ImageSource.FromUri (new Uri (item [i].URLImage))
 					});
 				}

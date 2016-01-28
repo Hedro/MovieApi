@@ -25,7 +25,6 @@ namespace MovieApi
 			listView.ItemsSource = _database.GetDatas ();
 			listView.ItemTemplate = new DataTemplate (typeof(CustomItemCell));
 
-
 			var stack = new StackLayout () 
 			{
 				Children = 
@@ -85,7 +84,7 @@ namespace MovieApi
 	public class CustomItemCell : ViewCell
 	{
 		private MovieOrSerieIsFavDataBase _database;
-
+			
 		public CustomItemCell()
 		{
 			_database = new MovieOrSerieIsFavDataBase ();
@@ -98,15 +97,13 @@ namespace MovieApi
 			//Set Labels et Image
 			var image = new Image ();
 			var nameLabel = new Label ();
-			var typeLabel = new Label ();
 			var deleteAction = new MenuItem { Text = "Delete", IsDestructive = true };
 
-			//Set bindings
 			image.SetBinding (Image.SourceProperty, "MovieOrSerieImageUrl");
 			nameLabel.SetBinding (Label.TextProperty, "MovieOrSerieName");
-			typeLabel.SetBinding (Label.TextProperty, "\n\n" + "MovieOrSerieType");
 			deleteAction.SetBinding (MenuItem.CommandParameterProperty, new Binding ("."));
 
+			//Action pour Delete avec le Swipe
 			deleteAction.Clicked += (sender, e) => {
 				var a = (MenuItem)sender;
 
@@ -122,7 +119,6 @@ namespace MovieApi
 			//Add to cells
 			cellView.Children.Add (image);
 			cellView.Children.Add (nameLabel);
-			cellView.Children.Add (typeLabel);
 			ContextActions.Add (deleteAction);
 			cellWrapper.Children.Add (cellView);
 			View = cellWrapper;

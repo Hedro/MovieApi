@@ -34,7 +34,7 @@ namespace MovieApi
 			} 
 			else 
 			{
-				Poster.Source = ImageSource.FromUri (new Uri ("http://sd.keepcalm-o-matic.co.uk/i/error-404-democracy-not-found.png"));
+				Poster.Source = ImageSource.FromFile("notfound.png");
 			}
 
 			if (a != null) 
@@ -53,7 +53,7 @@ namespace MovieApi
 				{
 					Favori = 1;
 					Fav.Source = ImageSource.FromFile("FavOui.png");
-					_database.AddData(id, detailsSerie.Title + "\n\n(movie)", detailsSerie.UrlImage, "movie");
+					_database.AddData(id, detailsSerie.Title + "\n\n(show)", detailsSerie.UrlImage, "show");
 				}
 				else
 				{

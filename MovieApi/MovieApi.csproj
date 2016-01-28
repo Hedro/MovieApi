@@ -38,7 +38,6 @@
     <Compile Include="Pages\MoviePage.cs" />
     <Compile Include="Pages\SeriePage.cs" />
     <Compile Include="Models\SerieViewModel.cs" />
-    <Compile Include="Pages\MainPage.cs" />
     <Compile Include="Pages\TypePage.cs" />
     <Compile Include="Pages\SearchPage.cs" />
     <Compile Include="Models\ItemViewModel.cs" />
@@ -53,6 +52,12 @@
     </Compile>
     <Compile Include="Pages\DetailSeriePageXaml.xaml.cs">
       <DependentUpon>DetailSeriePageXaml.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MainPageXaml.xaml.cs">
+      <DependentUpon>MainPageXaml.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TypePageXaml.xaml.cs">
+      <DependentUpon>TypePageXaml.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
@@ -98,6 +103,12 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\DetailSeriePageXaml.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\MainPageXaml.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\TypePageXaml.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
