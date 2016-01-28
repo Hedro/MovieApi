@@ -134,7 +134,6 @@
       <DeployService-Deploy>True</DeployService-Deploy>
     </BundleResource>
     <BundleResource Include="Resources\YouTubeIcon.png" />
-    <BundleResource Include="Resources\notfound.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MovieApi\MovieApi.csproj">

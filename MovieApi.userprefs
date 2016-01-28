@@ -1,11 +1,8 @@
 ﻿<Properties StartupItem="iOS/MovieApi.iOS.csproj" RefactoringSettings.EnableRefactorings="True">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone6s.9.2" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MovieApi/Pages/SeriePage.cs">
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="MovieApi/Pages/SeriePage.cs" Line="80" Column="26" />
-      <File FileName="MovieApi/Pages/TypePage.cs" Line="1" Column="1" />
-      <File FileName="MovieApi/Pages/MainPage.cs" Line="1" Column="1" />
-      <File FileName="MovieApi/Pages/SearchPage.cs" Line="1" Column="1" />
+      <File FileName="MovieApi/Pages/SearchPage.cs" Line="26" Column="40" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

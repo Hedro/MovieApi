@@ -28,13 +28,13 @@ namespace MovieApi
 
 			string urlImdb = "http://www.imdb.com/title/" + movieDetails.Imdb + "/?ref_=fn_al_tt_1";
 
-			if (movieDetails.UrlImage != null) 
+			if (movieDetails.UrlImage != null && movieDetails.UrlImage != "") 
 			{
 				Poster.Source = ImageSource.FromUri (new Uri (movieDetails.UrlImage));
 			} 
 			else 
 			{
-				Poster.Source = ImageSource.FromFile("notfound.png");
+				Poster.Source = ImageSource.FromUri(new Uri("http://i.imgur.com/u6dVu5R.png?1"));
 			}
 
 			if (a != null) 
