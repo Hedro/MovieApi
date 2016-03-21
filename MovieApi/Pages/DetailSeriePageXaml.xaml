@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MovieApi.DetailSeriePageXaml">
+	<ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness"
+                iOS="0, 20, 0, 0" />
+  </ContentPage.Padding>
+
+  <ScrollView>
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="100" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+      </Grid.RowDefinitions>
+
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="Auto" />
+      </Grid.ColumnDefinitions>
+
+      <Image x:Name="Poster"
+             Grid.Row="0" Grid.Column="0"
+             Grid.RowSpan="2"
+             HeightRequest="180"
+             WidthRequest="150"
+           />
+
+      <Label x:Name="Title"
+             Grid.Row="0" Grid.Column="1"
+             Grid.ColumnSpan="2"
+             FontSize="20"
+             FontAttributes="Bold"
+           />
+
+      <Image x:Name="Fav"
+             Grid.Row="2" Grid.Column="1"
+             Grid.ColumnSpan="2"
+             HeightRequest="30"
+             WidthRequest="30"
+           
+           />
+
+      <Label x:Name="Genders"
+             Grid.Row="1" Grid.Column="1"
+             Grid.ColumnSpan="2"
+             FontAttributes="Italic"
+           />
+
+      <Label Text="Overview :"
+             Grid.Row="3" Grid.Column="0"
+             Grid.ColumnSpan="3"
+             FontSize="18"
+              FontAttributes="Bold"
+           />
+      <Label x:Name="Overview"
+             Grid.Row="4" Grid.Column="0"
+             Grid.ColumnSpan="3"
+             FontSize="16"
+           />
+
+      <Label Text="Rating :"
+            Grid.Row="5" Grid.Column="0"
+            FontSize="18"
+             FontAttributes="Bold"
+           />
+
+      <Label Text="RunTime :"
+             Grid.Row="5" Grid.Column="1"
+             FontSize="18"
+             FontAttributes="Bold"
+           />
+
+      <Label x:Name="Rating"
+             Grid.Row="6" Grid.Column="0"
+           />
+
+      <Label x:Name="Runtime"
+             Grid.Row="6" Grid.Column="1"
+           />
+
+      <Label Text="Certification :"
+             Grid.Row="7" Grid.Column="0"
+             FontSize="18"
+             FontAttributes="Bold"
+           />
+
+      <Label x:Name="Certification"
+              Grid.Row="8" Grid.Column="0"
+           />
+      
+      <Label Text="Country :"
+              Grid.Row="9" Grid.Column="0"
+              FontSize="18"
+              FontAttributes="Bold"
+          />
+
+      <Label x:Name="Country"
+              Grid.Row="10" Grid.Column="0"
+           />
+      
+      <Label Text="Available Translation :"
+              Grid.Row="9" Grid.Column="1"
+              FontSize="18"
+              FontAttributes="Bold"
+          />
+
+      <Label x:Name="AvailableTranslation"
+              Grid.Row="10" Grid.Column="1"
+           />
+      
+      <Label Text="Link"
+             Grid.Row="13" Grid.Column="0"
+             HorizontalOptions="Center"
+             Grid.ColumnSpan="3"
+             FontSize="18"
+             FontAttributes="Bold"
+           />
+
+      <Image x:Name="Youtube"
+             Grid.Row="14" Grid.Column="0"
+           />
+
+      <Image x:Name="Imdb"
+             Grid.Row="14" Grid.Column="1"
+           />
+
+    </Grid>
+  </ScrollView>
+</ContentPage>
